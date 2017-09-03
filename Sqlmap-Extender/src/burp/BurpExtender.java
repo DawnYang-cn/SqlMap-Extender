@@ -52,7 +52,7 @@ public class BurpExtender implements IBurpExtender,ITab{
                         StringBuffer stringBuffer = new StringBuffer();
                         Runtime runtime = Runtime.getRuntime();
                         try{
-                            Process process = runtime.exec("ifconfig");
+                            Process process = runtime.exec("./sqlmap-master/sqlmap.py -h");
                             BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(process.getInputStream()));
                             while((line = bufferedReader.readLine())!=null){
                                 stringBuffer.append(line+"\n");
